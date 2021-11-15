@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter95/flutter95.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:telemind/message_box.dart';
-import 'package:web_socket_channel/io.dart';
 import 'package:web_socket_channel/web_socket_channel.dart';
 
 import 'message.dart';
@@ -32,8 +31,8 @@ class ChatScreenState extends State<ChatScreen> {
     super.initState();
   }
 
-  var ws = WebSocketChannel.connect(Uri.parse("ws://euph.ddns.net:1337"));
-  List<Message> messages = [];
+  late var ws;
+  late List<Message> messages;
 
   ChatScreenState(this.username){
     ws = WebSocketChannel.connect(Uri.parse("ws://euph.ddns.net:1337"));
@@ -108,7 +107,7 @@ class ChatScreenState extends State<ChatScreen> {
                     Button95(
                       padding:
                         const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
-                      child: Text("Send"),
+                      child: const Text("Send"),
                       onTap: (){
                         ws.sink.add(_controller.text);
                         _controller.clear();
