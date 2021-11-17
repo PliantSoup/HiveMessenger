@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter95/flutter95.dart';
 import 'package:telemind/login.dart';
 
 void main() {
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.amber,
       ),
-      home: LoginScreen(title: "Hive"),
+      home: const LoginScreen(title: "Hive"),
     );
   }
 }

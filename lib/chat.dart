@@ -45,7 +45,6 @@ class ChatScreenState extends State<ChatScreen> {
 
     ws.stream.listen((m) {
       final decoded = jsonDecode(m.toString());
-      print(decoded);
 
       if (decoded["type"] == "message"){
         messages.add(Message.fromJson(decoded["data"]));

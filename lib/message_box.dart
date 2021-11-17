@@ -21,9 +21,9 @@ class MessageBox extends StatelessWidget {
     return SafeArea(
         child: Container(
           decoration: BoxDecoration(
-            color: Color.fromRGBO(225, 225, 225, 100),
+            color: const Color.fromRGBO(225, 225, 225, 100),
             border: Border.all(
-              color: Color.fromRGBO(180, 180, 180, 100)
+              color: const Color.fromRGBO(180, 180, 180, 100)
             )
           ),
           margin: const EdgeInsets.only(left: 5, right: 5, top: 5),
